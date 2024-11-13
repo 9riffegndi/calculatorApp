@@ -6,27 +6,55 @@ function display() {
   body.appendChild(display);
   display.className = "w-full";
   display.innerHTML = `
-      <input id="displayResults" class="text-white bg-transparent w-full text-end outline-none font-bold text-[50px] p-10" type="text" readonly />
-      <div class="grid grid-cols-4 grid-rows-4 gap-1 ~">
-        <button onclick="clearDisplay()" class= "w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">C</button>
-        <button onclick="appendValue('/')"class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">÷</button>
-        <button onclick="appendValue('-')"class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl" >-</button>
-        <button onclick="backspace()"class="w-[200px] h-[100px] hover:bg-neutral-900 flex items-center justify-center  bg-[#3C3D37] rounded-md text-white ">⌫</button>
-        <button onclick="appendValue(7)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">7</button>
-        <button onclick="appendValue(8)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">8</button>
-        <button onclick="appendValue(9)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">9</button>
-        <button onclick="appendValue('*')" class=" w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">×</button>
-        <button onclick="appendValue(4)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">4</button>
-        <button onclick="appendValue(5)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">5</button>
-        <button onclick="appendValue(6)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">6</button>
-        <button onclick="appendValue('+')" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">+</button>
-        <button onclick="appendValue(1)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">1</button>
-        <button onclick="appendValue(2)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">2</button>
-        <button onclick="appendValue(3)" class="w-[200px] h-[100px] hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">3</button>
-        <button onclick="appendValue('.')" class="w-[200px] h-[100px] hover:bg-neutral-900  bg-[#3C3D37] rounded-md text-white text-2xl">.</button>
-        <button onclick="appendValue(0)" class="w-[200px] h-[100px] hover:bg-neutral-900 col-span-3 rounded-md  bg-[#3C3D37] text-white text-2xl">0</button>
-        <button onclick="calculate()" class="w-[200px] h-[100px]  bg-cyan-500 hover:bg-cyan-900 rounded-md text-white text-2xl">=</button>
-      </div>
+  <div class="p-5 max-w-lg mx-auto">
+    <input id="displayResults" 
+          class="text-white bg-transparent w-full text-right outline-none font-bold text-4xl p-6 border-b border-gray-500 mb-4" 
+          type="text" 
+          readonly />
+    <div class="grid grid-cols-4 gap-4">
+      <button onclick="clearDisplay()" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">C</button>
+      <button onclick="appendValue('/')" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">÷</button>
+      <button onclick="appendValue('-')" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">-</button>
+      <button onclick="backspace()" 
+              class="w-full h-20 hover:bg-neutral-900 flex items-center justify-center bg-[#3C3D37] rounded-md text-white text-2xl">⌫</button>
+
+      <button onclick="appendValue(7)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">7</button>
+      <button onclick="appendValue(8)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">8</button>
+      <button onclick="appendValue(9)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">9</button>
+      <button onclick="appendValue('*')" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">×</button>
+
+      <button onclick="appendValue(4)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">4</button>
+      <button onclick="appendValue(5)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">5</button>
+      <button onclick="appendValue(6)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">6</button>
+      <button onclick="appendValue('+')" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">+</button>
+
+      <button onclick="appendValue(1)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">1</button>
+      <button onclick="appendValue(2)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">2</button>
+      <button onclick="appendValue(3)" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">3</button>
+      <button onclick="appendValue('.')" 
+              class="w-full h-20 hover:bg-neutral-900 bg-[#3C3D37] rounded-md text-white text-2xl">.</button>
+
+      <button onclick="appendValue(0)" 
+              class="w-full h-20 hover:bg-neutral-900 col-span-3 rounded-md bg-[#3C3D37] text-white text-2xl">0</button>
+      <button onclick="calculate()" 
+              class="w-full h-20 bg-cyan-500 hover:bg-cyan-900 rounded-md text-white text-2xl">=</button>
+    </div>
+  </div>
+
   `;
 }
 display();
